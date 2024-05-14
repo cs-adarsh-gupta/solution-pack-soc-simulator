@@ -49,13 +49,14 @@
                     "item": "{{vars.demoRecordIRIs}}",
                     "__bulk": false,
                     "parallel": true,
-                    "condition": ""
+                    "condition": "{{'mitre' not in vars.item}}"
                 },
                 "arguments": {
                     "demoRecordIRI": "{{vars.item}}"
                 },
                 "apply_async": false,
                 "step_variables": [],
+                "pass_parent_env": false,
                 "pass_input_record": false,
                 "workflowReference": "\/api\/3\/workflows\/45c1a51b-6a10-4ab8-b9ca-4aeb21f28056"
             },
@@ -243,12 +244,12 @@
                     "body": "",
                     "method": "DELETE"
                 },
-                "version": "3.2.3",
+                "version": "3.2.6",
                 "for_each": {
                     "item": "{{vars.demoRecordIRIs}}",
                     "__bulk": false,
                     "parallel": true,
-                    "condition": "{{vars.item}}"
+                    "condition": "{{'mitre' not in vars.item}}"
                 },
                 "connector": "cyops_utilities",
                 "operation": "make_cyops_request",
@@ -418,6 +419,7 @@
     "deletedAt": null,
     "recordTags": [
         "Simulation",
-        "Cleanup"
+        "Cleanup",
+        "SystemWaitForCompletion"
     ]
 }

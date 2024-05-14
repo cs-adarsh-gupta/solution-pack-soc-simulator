@@ -163,10 +163,10 @@
             "arguments": {
                 "params": {
                     "iri": "\/api\/query\/attribute_metadatas",
-                    "body": "{\n  \"sort\": [],\n  \"filters\": [\n    {\n      \"field\": \"formType\",\n      \"operator\": \"eq\",\n      \"type\": \"array\",\n      \"value\": \"manyToMany\"\n    },\n    {\n      \"field\": \"sattrib.type\",\n      \"operator\": \"eq\",\n      \"value\": \"{{vars.moduleName}}\"\n    }\n  ],\n  \"logic\": \"AND\"\n}",
+                    "body": "{\n  \"sort\": [],\n  \"filters\": [\n    {\n      \"field\": \"type\",\n      \"operator\": \"notlike\",\n      \"value\": \"%mitre%\"\n    },\n    {\n      \"field\": \"formType\",\n      \"operator\": \"eq\",\n      \"type\": \"array\",\n      \"value\": \"manyToMany\"\n    },\n    {\n      \"field\": \"sattrib.type\",\n      \"operator\": \"eq\",\n      \"value\": \"{{vars.moduleName}}\"\n    }\n  ],\n  \"logic\": \"AND\"\n}",
                     "method": "POST"
                 },
-                "version": "3.2.3",
+                "version": "3.2.6",
                 "connector": "cyops_utilities",
                 "operation": "make_cyops_request",
                 "operationTitle": "FSR: Make FortiSOAR API Call",

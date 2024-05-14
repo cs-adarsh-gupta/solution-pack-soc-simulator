@@ -1,29 +1,15 @@
 # What's New
 
-## Playbook Enhancements
+1. **Introducing New Output Variable `recordIRIs`:**
+   - We've introduced a new output variable called `recordIRIs` as an alternative to the existing `@id` for passing demo record IRIs from the records generation playbook to the scenario playbook.
+   
+        Going forward we'll be using the `recordIRIs` output variable for future releases.
 
-- Added a new playbook **Reset Scenario - Get Correlated Records** that fetches all the correlated records of the demo record created for the simulation
+2. **Handling Multiple Record Generation Playbooks:**
+   - To handle scenarios with multiple record generation playbooks, we've updated the logic for collecting created record IRIs. Instead of a nested list, the IRIs are now stored as a single list in the *Created Records ID* field.
 
-- Following playbooks have been modified
+3. **Enhancing *Reset Scenario* Playbooks:**
+   - The *Reset Scenario* playbooks have been enhanced to retain correlated MITRE records associated with the demo records. This ensures that relevant data is preserved during scenario resets.
 
-  - **Run Selected Scenario** playbook modifications:
-
-    - The loop execution mode of the *Create Alert* step is updated from `Sequential` to `Parallel`
-
-    - A `Simulation` tag is added to the playbook
-
-    - The **Create Scenario** step is renamed to **Create Alerts** 
-
-  - **Run Scenario** playbook modifications:
-
-    - The loop execution mode of the *Create Alert* step is updated from `Sequential` to `Parallel`
-
-  - **Run Scenario - Create Alerts** playbook modifications:
-
-    - Updated the playbook so it now adds post-create comments in scenario records after demo records creation
-
-## Module Enhancements
-
-- `Created Alerts ID` field label has been updated to `Created Records ID` in the *Scenario* module
-
-
+4. **Update in *Run Scenario - Create Alerts* Playbook:**
+   - In the playbook **Run Scenario - Create Alerts**, we've updated the value of `Parent Data Reference` field in the step *Launch Step Playbook* to `Input record only`.
