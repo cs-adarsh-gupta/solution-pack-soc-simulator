@@ -23,7 +23,7 @@
                 "for_each": {
                     "item": "{{vars.steps.Get_Scenario_Details[0].steps.Steps}}",
                     "__bulk": false,
-                    "parallel": true,
+                    "parallel": false,
                     "condition": ""
                 },
                 "arguments": {

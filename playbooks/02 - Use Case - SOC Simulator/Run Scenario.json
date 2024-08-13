@@ -38,7 +38,7 @@
                 "for_each": {
                     "item": "{{vars.alert_Steps}}",
                     "__bulk": false,
-                    "parallel": true,
+                    "parallel": false,
                     "condition": ""
                 },
                 "arguments": {
